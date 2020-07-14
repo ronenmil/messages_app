@@ -2074,3 +2074,318 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 33ms (Views: 26.0ms | ActiveRecord: 0.7ms | Allocations: 12419)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200714093540)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200714093540"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-07-14 12:39:40 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ronenmiller/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ronenmiller/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.1ms | Allocations: 295)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 1779)
+
+
+Started GET "/users" for ::1 at 2020-07-14 12:39:45 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1293)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/ronenmiller/tmp/messages_app/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 512ms
+Built at: 07/14/2020 12:39:47 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 1803ms (Views: 1798.4ms | ActiveRecord: 0.6ms | Allocations: 21906)
+
+
+Started GET "/" for ::1 at 2020-07-14 12:39:53 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ronenmiller/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ronenmiller/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.8ms | Allocations: 179)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 898)
+
+
+Started GET "/users/new" for ::1 at 2020-07-14 12:59:58 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 12.5ms | Allocations: 4903)
+  Rendered users/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 5242)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 11893)
+
+
+Started POST "/users" for ::1 at 2020-07-14 13:01:38 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"rJbKolE8TPsBfWBqNagO56kJMwanAU251waJ/V8+d4ulz/nHPTck6KO1klCSp9nSrcRxhodxLA4e5tSnK+jrAQ==", "user"=>{"name"=>"Ronen Miller", "email"=>"ronen.miller@cloudinary.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ronen Miller"], ["email", "ronen.miller@cloudinary.com"], ["created_at", "2020-07-14 10:01:38.842150"], ["updated_at", "2020-07-14 10:01:38.842150"]]
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms | Allocations: 2939)
+
+
+Started GET "/users/1" for ::1 at 2020-07-14 13:01:38 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 253)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.2ms | Allocations: 5232)
+
+
+Started GET "/users" for ::1 at 2020-07-14 13:01:41 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 783)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4684)
+
+
+Started GET "/users/1" for ::1 at 2020-07-14 13:01:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 4494)
+
+
+Started GET "/users" for ::1 at 2020-07-14 13:01:47 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 770)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4669)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-07-14 13:01:50 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 764)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1003)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 5574)
+
+
+Started GET "/users" for ::1 at 2020-07-14 13:01:54 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 765)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 4657)
+
+
+Started GET "/users/new" for ::1 at 2020-07-14 13:02:18 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.1ms | Allocations: 687)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 769)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4658)
+
+
+Started POST "/users" for ::1 at 2020-07-14 13:02:30 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Fp5twfCRrTfmVwEudGz+/2uSdwIndU8MfSHBZcNdyqqDfjQS92WmoicY6fbpwqTBlV5LZeKcPVpIPPvUecxSdg==", "user"=>{"name"=>"Gal Bar On", "email"=>"galbaron@gmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Gal Bar On"], ["email", "galbaron@gmail.com"], ["created_at", "2020-07-14 10:02:30.914398"], ["updated_at", "2020-07-14 10:02:30.914398"]]
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms | Allocations: 2710)
+
+
+Started GET "/users/2" for ::1 at 2020-07-14 13:02:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 4516)
+
+
+Started GET "/users" for ::1 at 2020-07-14 13:04:19 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 888)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 4786)
+
+
+Started DELETE "/users/2" for ::1 at 2020-07-14 13:04:28 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"djBIScifCzQRhIu/+01RSbKRIYLDZ95gDRe79Rvj+mV/aXsspJRjJ7NMeYVcQoZ8tlxjAuMXv9fE9+avbzVm7w==", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57:in `destroy'
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:57:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms | Allocations: 2798)
+
+
+Started GET "/users" for ::1 at 2020-07-14 13:04:28 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 764)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4678)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMicroposts (20200714102307)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "microposts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200714102307"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/microposts" for ::1 at 2020-07-14 13:23:56 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1252)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.4ms | Allocations: 15584)
+
+
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:24:24 +0300
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 5.5ms | Allocations: 1257)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 12.0ms | ActiveRecord: 0.5ms | Allocations: 8200)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:24:37 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"OuWCjz9/2LewjnGjp2jI+/oO/1ESrHsHmCwcgTXqYLHzJp1uftZonfEFJw74Qs2SEqMVbIKesKu7Mt5qNtk5lg==", "micropost"=>{"content"=>"Hello World!", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.4ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Hello World!"], ["user_id", 1], ["created_at", "2020-07-14 10:24:37.365972"], ["updated_at", "2020-07-14 10:24:37.365972"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/1
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms | Allocations: 2760)
+
+
+Started GET "/microposts/1" for ::1 at 2020-07-14 13:24:37 +0300
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 249)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5011)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:25:06 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 763)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 4713)
+
+
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:25:13 +0300
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.3ms | Allocations: 691)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4724)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:25:19 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"5crbBti8jflDGcv0rGb5FX5Xfp64nfLOol0Hgw4KJL0sCcTnmRU90wKSnVnzTPx8lvqUoyivOWKBQ8VoDTl9mg==", "micropost"=>{"content"=>"Good Bye!", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.4ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Good Bye!"], ["user_id", 2], ["created_at", "2020-07-14 10:25:19.490406"], ["updated_at", "2020-07-14 10:25:19.490406"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/2
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms | Allocations: 2707)
+
+
+Started GET "/microposts/2" for ::1 at 2020-07-14 13:25:19 +0300
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 4567)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:25:21 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 4836)
+
+
