@@ -2389,3 +2389,330 @@ Processing by MicropostsController#index as HTML
 Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 4836)
 
 
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:30:17 +0300
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.2ms | Allocations: 689)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 4717)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:30:27 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 4835)
+
+
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:33:24 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1153)
+
+
+  
+SyntaxError (/Users/ronenmiller/tmp/messages_app/app/models/micropost.rb:2: syntax error, unexpected ':', expecting `end'
+  validates: content, :length => { maximu...
+           ^
+/Users/ronenmiller/tmp/messages_app/app/models/micropost.rb:2: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+... validates: content, :length => { maximum => 140 }
+...                             ^~
+):
+  
+app/models/micropost.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/micropost.rb:2: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/micropost.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/micropost.rb:2: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/micropost.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/micropost.rb:2: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/microposts_controller.rb:17:in `new'
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:34:44 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.4ms | Allocations: 775)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 8342)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:35:02 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ol1udVYgYHpxlIN6Y2SnmYv6Npyca9hoqxdVhBbmI9AzBF0QOisIadNccUDEa3Csjzd0HLwbud9i9wjeYjC/Wg==", "micropost"=>{"content"=>"jshfjshdjkfghfsgkjhfdkjghfkgjhfsdjkghkfdjshgkfjsdhgkjsfhdkgjhfskgjhkdfsjhgkjfdshknvjsfdhnkvsfndgkcnuhsks", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.4ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "jshfjshdjkfghfsgkjhfdkjghfkgjhfsdjkghkfdjshgkfjsdhgkjsfhdkgjhfskgjhkdfsjhgkjfdshknvjsfdhnkvsfndgkcnuhsks"], ["user_id", 2], ["created_at", "2020-07-14 10:35:02.074215"], ["updated_at", "2020-07-14 10:35:02.074215"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/3
+Completed 302 Found in 23ms (ActiveRecord: 2.3ms | Allocations: 2846)
+
+
+Started GET "/microposts/3" for ::1 at 2020-07-14 13:35:02 +0300
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 91)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 4904)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:05 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1031)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 4978)
+
+
+Started DELETE "/microposts/3" for ::1 at 2020-07-14 13:35:12 +0300
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gW7jAp6u2LQVeD6vr+VkS2TGcINug1ZnQ+rbedWk9tSIN9Bn8qWwp7ewzJUI6rN+YAsyA07zN9CKCoYjoXJqXg==", "id"=>"3"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+  [1m[36mMicropost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms | Allocations: 2783)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:12 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 4867)
+
+
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:35:13 +0300
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.6ms | Allocations: 691)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4727)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:35:21 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Yz89y0ssefbSg0Pazb300F5SXOhMxl0zYAby76rsBt6q/CIqCoXJ3JMIFXeSl/G5tv+21dz0lp9DGDAEqd9f+Q==", "micropost"=>{"content"=>"dfsfsdfdsfsdgfdsgfsdgfdsgfdsgfsdgdfsgdfsgfdsgdfbvcxbxcbcxbvcxbxvcbxcvbvcxbxvcbcx", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.4ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "dfsfsdfdsfsdgfdsgfsdgfdsgfdsgfsdgdfsgdfsgfdsgdfbvcxbxcbcxbvcxbxvcbxcvbvcxbxvcbcx"], ["user_id", 1], ["created_at", "2020-07-14 10:35:21.893952"], ["updated_at", "2020-07-14 10:35:21.893952"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/4
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms | Allocations: 2721)
+
+
+Started GET "/microposts/4" for ::1 at 2020-07-14 13:35:21 +0300
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4570)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:33 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 5194)
+
+
+Started DELETE "/microposts/4" for ::1 at 2020-07-14 13:35:35 +0300
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Lv8f59UxRi9qZH4JU362zurK7BCoGyYN6TwzFRKg8YMnpiyCuTouPMisjDP0cWH77geukIhrR7og3G5PZnZtCQ==", "id"=>"4"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+  [1m[36mMicropost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 2796)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:35 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 4847)
+
+
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:35:37 +0300
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.3ms | Allocations: 692)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 774)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4723)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:35:41 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"YpsjGZjol+daNeDZ7gq5uSG1U7A1B/ESnDfz9Bc7CMirWDz42UEnzRu+tnSxILzQyRi5jaU1Or6/KTEfFAhR7w==", "micropost"=>{"content"=>"dsfdsgdsfgfdsgdfsgfdsgsdfgdfsgdsf", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.4ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "dsfdsgdsfgfdsgdfsgfdsgsdfgdfsgdsf"], ["user_id", 1], ["created_at", "2020-07-14 10:35:41.874199"], ["updated_at", "2020-07-14 10:35:41.874199"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/5
+Completed 302 Found in 24ms (ActiveRecord: 1.4ms | Allocations: 2730)
+
+
+Started GET "/microposts/5" for ::1 at 2020-07-14 13:35:41 +0300
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 4582)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:43 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 4958)
+
+
+Started DELETE "/microposts/5" for ::1 at 2020-07-14 13:35:46 +0300
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"l05YrJ5iHkOZmPJvTyN4PmFjW2C3vBHJPSbAmzr6dQ6eF2vJ8ml2UDtQAFXoLK8LZa4Z4JfMcH70xp3BTizphA==", "id"=>"5"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+  [1m[36mMicropost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms | Allocations: 2781)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:46 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.1ms | Allocations: 4858)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:35:58 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4597)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 38.7ms | ActiveRecord: 0.6ms | Allocations: 18681)
+
+
+Started GET "/microposts/new" for ::1 at 2020-07-14 13:36:00 +0300
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 7.1ms | Allocations: 2570)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 7014)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:36:05 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"0d+W0pfIhc9xgPMPz0EDDLTTzMV9q8STK3Op+amMXtwYHIkz1mE15TALpaKQawZlXH4m+O2ZDz8IbWsSqr8H+w==", "micropost"=>{"content"=>"fsadfsagfsdgfsdgfdsgfdsgsdfgdfs", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.5ms | Allocations: 857)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 940)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5930)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:36:24 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"qqgN61t+ak/l0zcJfCxiQ7nE3HESHcKyHbaqdJnNZRKj8T6ON3UCXEcbxTPbI7V2vQme8TJtowXUVvcu7Rv5mA==", "micropost"=>{"content"=>"I am not too", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.4ms | Allocations: 841)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5736)
+
+
+Started POST "/microposts" for ::1 at 2020-07-14 13:36:36 +0300
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"jbh5dRiOXoLecJDngz7hQ2cfqoeUftlEvIhyRyadeuaE4UoQdIU2kXy4Yt0kMTZ2Y9LoB7QOuPN1aC8dUkvmbA==", "micropost"=>{"content"=>"I am not", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.6ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "I am not"], ["user_id", 1], ["created_at", "2020-07-14 10:36:36.482714"], ["updated_at", "2020-07-14 10:36:36.482714"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/6
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms | Allocations: 2837)
+
+
+Started GET "/microposts/6" for ::1 at 2020-07-14 13:36:36 +0300
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 26.4ms | ActiveRecord: 0.2ms | Allocations: 7110)
+
+
+Started GET "/microposts" for ::1 at 2020-07-14 13:36:38 +0300
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 4962)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
