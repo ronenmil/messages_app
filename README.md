@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* Ruby on Rails Tutorial: sample application
+This is the sample application for messages
