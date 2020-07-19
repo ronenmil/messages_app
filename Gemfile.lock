@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ZenTest (4.12.0)
     actioncable (6.0.3.2)
       actionpack (= 6.0.3.2)
       nio4r (~> 2.0)
@@ -58,6 +59,10 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    autotest-fsevent (0.2.17)
+      sys-uname
+    autotest-growl (0.2.16)
+    autotest-rails-pure (4.1.2)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
@@ -184,12 +189,11 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    sys-uname (1.2.1)
+      ffi (>= 1.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     web-console (4.0.4)
@@ -220,6 +224,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest
+  autotest-fsevent
+  autotest-growl
+  autotest-rails-pure
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -233,7 +241,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
-  turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
